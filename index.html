@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="./assets/favicon.ico">
+    <meta name="description" content="Tyche: Stochastic In-Context Learning for Medical Image Segmentation">
+    <meta name="keywords" content="Tyche,Segmentation,In-Context Learning, Uncertainty,Medical,Neural-Networks">
+    <title>Tyche</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/d3e95fa766.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+
+<body>
+
+<div class="jumbotron is-centered">
+
+  <div class="desktop-only">
+    <div class="container text-center">
+      <h1>Tyche</h1>
+      <h3>Tyche: Stochastic In-Context Learning for Medical Image Segmentation</h3>
+      <h2></h2>
+    </div>
+
+    <div class="table-like authors" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+      <div>
+        <center>
+          <a href="https://mariannerakic.github.io/" style="font-size: larger">Marianne Rakic</a>
+        </center>
+        <center>
+          MIT CSAIL & Broad Institute
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="https://halleewong.github.io/" style="font-size: larger">Hallee E. Wong</a>
+        </center>
+        <center>
+          MIT CSAIL & MGH
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="https://halleewong.github.io/" style="font-size: larger">Hallee E. Wong</a>
+        </center>
+        <center>
+          MIT CSAIL & MGH
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="https://halleewong.github.io/" style="font-size: larger">Hallee E. Wong</a>
+        </center>
+        <center>
+          MIT CSAIL & MGH
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="https://people.csail.mit.edu/guttag/" style="font-size: larger">John Guttag</a>
+        </center>
+        <center>
+          MIT CSAIL
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="http://www.mit.edu/~adalca/" style="font-size: larger">Adrian V. Dalca</a>
+        </center>
+        <center>
+          MIT CSAIL & HMS, MGH
+        </center>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-only">
+    <div class="container text-center">
+      <h1 style="font-size:13vw">Tyche</h1>
+      <h3>Stochastic In-Context Learning for Medical Image Segmentation</h3>
+      <h2></h2>
+    </div>
+
+    <div class="table-like authors" style="justify-content:space-evenly;max-width:880px;margin:auto;">
+      <div>
+        <center>
+          <a href="https://mariannerakic.github.io/" style="font-size: larger; padding: 0em 2em">Marianne Rakic</a>
+        </center>
+        <center>
+          MIT CSAIL & MGH
+        </center>
+      </div>
+
+      <div>
+        <center>
+          <a href="https://halleewong.github.io/" style="font-size: larger; padding: 0em 2em">Hallee E. Wong</a>
+        </center>
+        <center>
+          MIT CSAIL & Broad Institute
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="https://people.csail.mit.edu/guttag/" style="font-size: larger; padding: 0em 2em">John Guttag</a>
+        </center>
+        <center>
+          MIT CSAIL
+        </center>
+      </div>
+      <div>
+        <center>
+          <a href="http://www.mit.edu/~adalca/" style="font-size: larger; padding: 0em 2em">Adrian V. Dalca</a>
+        </center>
+        <center>
+          MIT CSAIL & HMS, MGH
+        </center>
+      </div>
+    </div>
+
+  <!-- </center> -->
+  </div>
+
+</div>
+
+<div class="container is-centered">
+        <div class="row text-center">
+
+        <a href="https://arxiv.org/abs/2312.07381" target="_blank">
+            <button class="button-link">
+            <i class="fa-regular fa-file-lines fa-lg" style="color: #ffffff;"></i>
+            &nbsp;Paper
+        </button>
+        </a>
+
+        <a href="https://github.com/mariannerakic/tyche" target="_blank">
+        <button class="button-link">
+            <i class="fa-brands fa-github fa-lg" style="color: #ffffff;"></i>
+            &nbsp;Code
+        </button>
+        </a>
+
+    </div>
+
+</div>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="text-center ">Abstract</h2>
+    <hr/>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p>
+          Existing learning-based solutions to medical image segmentation have two important shortcomings.
+          <br>
+          <br>
+          First, for each new segmentation task, usually a new model has to be trained or fine-tuned. This requires extensive resources and machine-learning expertise, and is therefore often infeasible for medical researchers and clinicians. Second, most existing segmentation methods produce a single deterministic segmentation mask for a given image. However, in practice, there is often considerable uncertainty about what constitutes the \textit{correct} segmentation, and different expert annotators will often segment the same image differently. </b>. 
+          <br>
+          <br>
+          We tackle both of these problems with <b>Tyche</b>, a model that uses a context set to generate stochastic predictions for previously unseen tasks without the need to retrain. Tyche differs from other in-context segmentation methods in two important ways.  
+          <br>
+          <br>
+          (1) We introduce a novel convolution block architecture that enables interactions among predictions. 
+          (2) We introduce in-context test-time augmentation, a new mechanism to provide prediction stochasticity. 
+          <br>
+          <br>
+          When combined with appropriate model design and loss functions, Tyche can predict a set of plausible diverse segmentation candidates for new or unseen medical images and segmentation tasks without the need to retrain.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</section>
+
+<div class="container">
+  <div class="row is-four-fifths">
+    <h2 class="text-center ">Citation</h2>
+    <hr/>
+    <p>If you find our work or any of our materials useful, please cite our paper:</p>
+    <div class="alert alert-light citation">
+        @article{rakic2024tyche,<br>
+          &nbsp;&nbsp;title={Tyche: Stochastic In-Context Learning for Medical Image Segmentation},<br>
+          &nbsp;&nbsp;author={Marianne Rakic and Hallee E. Wong and Jose Javier Gonzalez Ortiz and Beth Cimini and John V. Guttag and Adrian V. Dalca},<br>
+          &nbsp;&nbsp;journal={TBD},<br>
+          &nbsp;&nbsp;year={2024},<br>
+    }
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+
+
+</body>
+</html>
