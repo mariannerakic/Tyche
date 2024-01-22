@@ -7,6 +7,7 @@ Official website of: _Tyche: Stochastic In-Context Learning for Medical Image Se
 
 
 
+![](https://github.com/mariannerakic/tyche/blob/website/assets/images/Tycheteasergit) 
 
 ## Abstract
 Existing learning-based solutions to medical image segmentation have two important shortcomings. First, for each new segmentation task, usually a new model has to be trained or fine-tuned. This requires extensive resources and machine-learning expertise, and is therefore often infeasible for medical researchers and clinicians. Second, most existing segmentation methods produce a single deterministic segmentation mask for a given image. However, in practice, there is often considerable uncertainty about what constitutes the _correct_ segmentation, and different expert annotators will often segment the same image differently. We tackle both of these problems with _Tyche_, a model that uses a context set to generate stochastic predictions for previously unseen tasks without the need to retrain. Tyche differs from other in-context segmentation methods in two important ways.  
