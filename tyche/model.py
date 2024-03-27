@@ -389,7 +389,7 @@ class TysegXC(nn.Module):
         return target
 
 
-# @validate_arguments
+@validate_arguments
 def tychets(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
 
     if version == "v1":
