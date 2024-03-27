@@ -1,1 +1,1 @@
-from .model import TysegXC, CrossOp, CrossOpTarget, tychexc
+from .model import TysegXC, CrossOp, CrossOpTarget, tyche
