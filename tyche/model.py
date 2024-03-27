@@ -390,7 +390,7 @@ class TysegXC(nn.Module):
 
 
 # @validate_arguments
-def tyche(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
+def tychets(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
 
     if version == "v1":
         model = TysegXC(encoder_blocks=[64, 64, 64, 64])
