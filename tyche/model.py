@@ -6,8 +6,6 @@ import einops as E
 import torch
 from torch import nn
 
-from pylot.nn.norm import get_normlayer, NormType
-
 from .nn.cross_conv import CrossConv2d
 from .nn.init import reset_conv2d_parameters
 from .nn.vmap import Vmap, vmap
@@ -39,7 +37,6 @@ class ConvOp(nn.Sequential):
     out_channels: int
     kernel_size: size2t = 3
     nonlinearity: Optional[str] = "LeakyReLU"
-    norm: Optional[NormType] = None
     init_distribution: Optional[str] = "kaiming_normal"
     init_bias: Union[None, float, int] = 0.0
 
@@ -57,13 +54,6 @@ class ConvOp(nn.Sequential):
         if self.nonlinearity is not None:
             self.nonlin = get_nonlinearity(self.nonlinearity)
 
-        if self.norm is not None:
-            # norm before activation for two reasons:
-            # 1. centering before the nonlinearity will maximize the utility of nonlinearity
-            # 2. otherwise, centering a only positive distribution will mess with it's shape
-            #    (see the Bengio's Deep Learning book)
-            self.norml = get_normlayer(self.out_channels, kind=self.norm, dims=2)
-
         reset_conv2d_parameters(
             self, self.init_distribution, self.init_bias, self.nonlinearity
         )
@@ -77,7 +67,6 @@ class CrossOp(nn.Module):
     out_channels: int
     kernel_size: size2t = 3
     nonlinearity: Optional[str] = "LeakyReLU"
-    norm: Optional[NormType] = None
     init_distribution: Optional[str] = "kaiming_normal"
     init_bias: Union[None, float, int] = 0.0
 
@@ -94,8 +83,6 @@ class CrossOp(nn.Module):
         if self.nonlinearity is not None:
             self.nonlin = get_nonlinearity(self.nonlinearity)
 
-        if self.norm is not None:
-            self.norml = get_normlayer(self.out_channels, kind=self.norm, dims=2)
 
         reset_conv2d_parameters(
             self, self.init_distribution, self.init_bias, self.nonlinearity
@@ -120,7 +107,6 @@ class CrossOpTarget(nn.Module):
     out_channels: int
     kernel_size: size2t = 3
     nonlinearity: Optional[str] = "LeakyReLU"
-    norm: Optional[NormType] = None
     init_distribution: Optional[str] = "kaiming_normal"
     init_bias: Union[None, float, int] = 0.0
 
@@ -137,8 +123,6 @@ class CrossOpTarget(nn.Module):
         if self.nonlinearity is not None:
             self.nonlin = get_nonlinearity(self.nonlinearity)
 
-        if self.norm is not None:
-            self.norml = get_normlayer(self.out_channels, kind=self.norm, dims=2)
 
         reset_conv2d_parameters(
             self, self.init_distribution, self.init_bias, self.nonlinearity
