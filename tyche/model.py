@@ -391,11 +391,14 @@ class TysegXC(nn.Module):
 
 @validate_arguments
 def tychets(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Module:
-
+    weights = {
+            "v1": "https://github.com/mariannerakic/Tyche/releases/download/weights/tyche_v1_model_weights_CVPR.pt"
+            }
     if version == "v1":
         model = TysegXC(encoder_blocks=[64, 64, 64, 64])
 
     if pretrained:
-        raise NotImplementedError
+       state_dict = torch.hub.load_state_dict_from_url(weights[version])
+       model.load_state_dict(state_dict)
 
     return model
