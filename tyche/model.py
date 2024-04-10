@@ -218,7 +218,7 @@ class TysegXC(nn.Module):
 
     encoder_blocks: List[size2t]
     decoder_blocks: Optional[List[size2t]] = None
-    cross_relu: bool = False
+    cross_relu: bool = True
 
     def __post_init__(self):
         super().__init__()
