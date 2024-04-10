@@ -399,6 +399,6 @@ def tychets(version: Literal["v1"] = "v1", pretrained: bool = False) -> nn.Modul
 
     if pretrained:
        state_dict = torch.hub.load_state_dict_from_url(weights[version])
-       model.load_state_dict(state_dict)
+       model.load_state_dict(state_dict['model'])
 
     return model
