@@ -243,6 +243,44 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="text-center ">Methods</h2>
+    <hr/>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <p>
+          Tyche captures the inherent ambiguity in medical image segmentation, while generalizing to new tasks without the need to retrain.
+          <br>
+          <br>
+          Tyche uses an input context set of image-segmentation pairs, which define the segmentation task, to know how to segment an input target image. Crucially, it captures uncertainty by outputting a flexible number of plausible predictions.
+          <br>
+          <div class="row ">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+            <img src="assets/images/inputoutput.png" class="img-responsive
+                " style="width:100% " alt="Image ">
+            </div>
+          </div>
+          <br>
+          We captures uncertainty through:
+          <br>
+          <br>
+          (1) Best candidate Dice loss (to hedge its bets), that encourages diversity by backpropagating gradients only for the best prediction. 
+          (2) SetBlock, an architectural mechanism for the predictions to interact at each layer.
+          <br>
+          <br>
+          <div class="row ">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+            <img src="assets/images/methods.png" class="img-responsive
+                " style="width:100% " alt="Image ">
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 </section>
 
