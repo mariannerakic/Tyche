@@ -65,7 +65,7 @@ body {
 }
 
 p {
-  font-size: 13pt;
+  font-size: 12pt;
 }
 
 .jumbotron {
@@ -87,7 +87,7 @@ p {
 
 /* Title */
 .jumbotron h1 {
-    font-size: 52pt;
+    font-size: 36pt;
     font-weight: 500;
     color: #202020;
 }
@@ -103,14 +103,14 @@ h2 {
 /* Subtitle */
 h3 {
     font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;  
-    font-size: 24pt;
+    font-size: 18pt;
     font-weight: 300;
 }
 
 h4 {
     font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;   
     margin-top: 20px;
-    font-size: 18pt;
+    font-size: 12pt;
     font-weight: 100;
 }
 
