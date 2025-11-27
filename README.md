@@ -13,3 +13,6 @@ Existing learning-based solutions to medical image segmentation have two importa
 2. We introduce in-context test-time augmentation, a new mechanism to provide prediction stochasticity.
 
 When combined with appropriate model design and loss functions, Tyche can predict a set of plausible diverse segmentation candidates for new or unseen medical images and segmentation tasks without the need to retrain.
+
+
+[*Check out our website* :D](http://tyche.csail.mit.edu/)  (demo included)
